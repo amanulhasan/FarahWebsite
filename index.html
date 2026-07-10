@@ -1,0 +1,2801 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farah's Wellness Journey ❤️</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #ff6b9d;
+            --primary-light: #ff8fb3;
+            --secondary: #c77dff;
+            --tertiary: #a0c4ff;
+            --accent: #ffd6e8;
+            --success: #06d6a0;
+            --warning: #ffd60a;
+            --danger: #ef476f;
+            --dark: #1a1a2e;
+            --light: #f8f9fa;
+            --white: #ffffff;
+            --glass: rgba(255, 255, 255, 0.7);
+            --glass-dark: rgba(26, 26, 46, 0.5);
+            --bg-start: #fdf2f8;
+            --bg-end: #f5e6f3;
+            --surface: rgba(255, 255, 255, 0.8);
+            --surface-strong: rgba(255, 255, 255, 0.95);
+            --nav-bg: rgba(255, 255, 255, 0.8);
+            --nav-text: #1a1a2e;
+            --text: #1a1a2e;
+            --text-soft: #6b7280;
+            --border: rgba(255, 107, 157, 0.2);
+            --shadow: rgba(255, 107, 157, 0.16);
+        }
+
+        [data-theme="dark"] {
+            --light: #1a1a2e;
+            --white: #0f0f1e;
+            --glass: rgba(26, 26, 46, 0.8);
+            --bg-start: #0f172a;
+            --bg-end: #1e1b4b;
+            --surface: rgba(26, 26, 46, 0.9);
+            --surface-strong: rgba(15, 23, 42, 0.98);
+            --nav-bg: rgba(15, 23, 42, 0.9);
+            --nav-text: #f8fafc;
+            --text: #f8fafc;
+            --text-soft: #cbd5e1;
+            --border: rgba(255, 255, 255, 0.12);
+            --shadow: rgba(15, 23, 42, 0.4);
+        }
+
+        [data-theme="purple"] {
+            --primary: #8b5cf6;
+            --primary-light: #a78bfa;
+            --secondary: #c084fc;
+            --tertiary: #7dd3fc;
+            --bg-start: #190f2d;
+            --bg-end: #2e1065;
+            --surface: rgba(32, 20, 56, 0.9);
+            --surface-strong: rgba(21, 13, 42, 0.98);
+            --nav-bg: rgba(21, 13, 42, 0.95);
+            --nav-text: #fdf4ff;
+            --text: #fdf4ff;
+            --text-soft: #d8b4fe;
+            --border: rgba(192, 132, 252, 0.25);
+            --shadow: rgba(88, 28, 135, 0.35);
+        }
+
+        [data-theme="pastel"] {
+            --primary: #ffc0d9;
+            --secondary: #d4a5ff;
+            --tertiary: #a8dadc;
+            --bg-start: #fff7fb;
+            --bg-end: #f3e8ff;
+            --surface: rgba(255, 255, 255, 0.8);
+            --surface-strong: rgba(255, 255, 255, 0.95);
+            --nav-bg: rgba(255, 255, 255, 0.8);
+            --nav-text: #6d28d9;
+            --text: #4c1d95;
+            --text-soft: #9d4edd;
+            --border: rgba(212, 165, 255, 0.3);
+            --shadow: rgba(255, 192, 217, 0.22);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+            background: linear-gradient(135deg, var(--bg-start) 0%, var(--bg-end) 100%);
+            color: var(--text);
+            transition: background 0.3s ease, color 0.3s ease;
+            overflow-x: hidden;
+        }
+
+        body[data-font-size="small"] {
+            font-size: 14px;
+        }
+
+        body[data-font-size="large"] {
+            font-size: 17px;
+        }
+
+        body[data-animation-intensity="low"] * {
+            animation-duration: 0.2s !important;
+            transition-duration: 0.2s !important;
+        }
+
+        body::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        body::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        body::-webkit-scrollbar-thumb {
+            background: linear-gradient(to bottom, var(--primary), var(--secondary));
+            border-radius: 6px;
+            box-shadow: 0 0 20px rgba(255, 107, 157, 0.5);
+        }
+
+        body::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(to bottom, var(--primary-light), var(--secondary));
+        }
+
+        /* CURSOR */
+        body {
+            cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='%23ff6b9d' d='M12 21s-6.5-4.3-8.4-8.3C2 9.5 2.4 6.6 4.8 5.1 6 4.1 7.7 4 8.9 5c.4.3.7.8 1.1 1.3.4-.5.7-1 1.1-1.3 1.2-1 2.9-1 4.1 0 2.4 1.5 2.8 4.4 1.2 7.6C18.5 16.7 12 21 12 21z'/%3E%3C/svg%3E") 12 12, auto;
+        }
+
+        a, button {
+            cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='%23ff6b9d' d='M12 21s-6.5-4.3-8.4-8.3C2 9.5 2.4 6.6 4.8 5.1 6 4.1 7.7 4 8.9 5c.4.3.7.8 1.1 1.3.4-.5.7-1 1.1-1.3 1.2-1 2.9-1 4.1 0 2.4 1.5 2.8 4.4 1.2 7.6C18.5 16.7 12 21 12 21z'/%3E%3C/svg%3E") 12 12, pointer;
+        }
+
+        /* PARTICLES BACKGROUND */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            background: var(--primary);
+            border-radius: 50%;
+            opacity: 0.3;
+            animation: float 20s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.3; }
+            50% { transform: translate(30px, -30px) scale(1.2); opacity: 0.6; }
+        }
+
+        /* MAIN CONTAINER */
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* NAVIGATION */
+        nav {
+            backdrop-filter: blur(10px);
+            background: var(--nav-bg);
+            border-bottom: 1px solid var(--border);
+            padding: 0.5rem 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 8px 32px rgba(255, 107, 157, 0.1);
+        }
+
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-brand {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -1px;
+        }
+
+        .nav-toggle {
+            display: none;
+            position: relative;
+            width: 44px;
+            height: 44px;
+            background: rgba(255, 107, 157, 0.12);
+            border: none;
+            border-radius: 50%;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+        .nav-toggle:hover {
+            transform: scale(1.05);
+            background: rgba(255, 107, 157, 0.2);
+        }
+
+        .nav-toggle-icon,
+        .nav-toggle-icon::before,
+        .nav-toggle-icon::after {
+            content: '';
+            position: absolute;
+            width: 18px;
+            height: 2px;
+            background: var(--primary);
+            border-radius: 999px;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .nav-toggle-icon::before {
+            transform: translateY(-6px);
+        }
+
+        .nav-toggle-icon::after {
+            transform: translateY(6px);
+        }
+
+        .nav-toggle.active .nav-toggle-icon {
+            background: transparent;
+        }
+
+        .nav-toggle.active .nav-toggle-icon::before {
+            transform: rotate(45deg);
+        }
+
+        .nav-toggle.active .nav-toggle-icon::after {
+            transform: rotate(-45deg);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .nav-item {
+            padding: 0.5rem 1rem;
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--nav-text);
+            transition: all 0.3s ease;
+            border-radius: 50px;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .nav-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            transition: left 0.3s ease;
+            z-index: -1;
+            border-radius: 50px;
+        }
+
+        .nav-item:hover::before {
+            left: 0;
+        }
+
+        .nav-item:hover {
+            color: white;
+            transform: translateY(-2px);
+            z-index: 2;
+        }
+
+        .nav-item.active {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            box-shadow: 0 8px 24px rgba(255, 107, 157, 0.4);
+        }
+
+        /* SECTIONS */
+        main {
+            flex: 1;
+            padding: 2rem 1rem;
+        }
+
+        section {
+            display: none;
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* CARDS */
+        .card {
+            backdrop-filter: blur(20px);
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 8px 32px rgba(255, 107, 157, 0.1);
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), transparent);
+            pointer-events: none;
+        }
+
+        .card:hover {
+            transform: translateY(-8px) scale(1.01);
+            box-shadow: 0 16px 48px var(--shadow);
+            border-color: var(--primary);
+            z-index: 10;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* DASHBOARD */
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 12px 40px rgba(255, 107, 157, 0.3);
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 20px 60px rgba(255, 107, 157, 0.4);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin: 0.5rem 0;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .greeting {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .quote {
+            font-size: 1rem;
+            font-style: italic;
+            color: var(--secondary);
+            margin-top: 1rem;
+            padding: 1rem;
+            border-left: 3px solid var(--primary);
+            border-radius: 5px;
+            background: rgba(255, 107, 157, 0.1);
+        }
+
+        /* PROGRESS RING */
+        .progress-ring-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 2rem 0;
+            position: relative;
+        }
+
+        .progress-ring {
+            transform: rotate(-90deg);
+            filter: drop-shadow(0 4px 12px rgba(255, 107, 157, 0.3));
+        }
+
+        .progress-ring-circle {
+            fill: none;
+            stroke: #e0e0e0;
+            stroke-width: 8;
+            transition: stroke-dashoffset 0.5s ease;
+        }
+
+        .progress-ring-progress {
+            fill: none;
+            stroke: url(#gradient-progress);
+            stroke-width: 8;
+            stroke-linecap: round;
+            transition: stroke-dashoffset 0.5s ease;
+        }
+
+        .progress-text {
+            position: absolute;
+            text-align: center;
+        }
+
+        .progress-value {
+            font-size: 2rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .progress-label {
+            font-size: 0.85rem;
+            color: var(--secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* FORMS */
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--text);
+            font-size: 0.9rem;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            font-size: 1rem;
+            background: var(--surface-strong);
+            color: var(--text);
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: var(--primary);
+            background: var(--surface);
+            box-shadow: 0 0 20px rgba(255, 107, 157, 0.2);
+        }
+
+        /* BUTTONS */
+        button {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            position: relative;
+            overflow: hidden;
+            font-family: inherit;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            box-shadow: 0 8px 24px rgba(255, 107, 157, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 32px rgba(255, 107, 157, 0.4);
+        }
+
+        .btn-secondary {
+            background: var(--accent);
+            color: var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-light);
+            color: white;
+        }
+
+        .btn-small {
+            padding: 0.5rem 1rem;
+            font-size: 0.85rem;
+        }
+
+        .btn-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+        }
+
+        /* CHECKBOX */
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: var(--surface-strong);
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 1px solid var(--border);
+        }
+
+        .checkbox-container:hover {
+            background: var(--surface);
+        }
+
+        .checkbox-custom {
+            width: 24px;
+            height: 24px;
+            border-radius: 6px;
+            border: 2px solid var(--primary);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .checkbox-custom.checked {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-color: var(--primary);
+            color: white;
+        }
+
+        /* MODAL */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            animation: fadeIn 0.3s ease-out;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: var(--white);
+            border-radius: 30px;
+            padding: 2rem;
+            max-width: 500px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            animation: slideUp 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid rgba(255, 107, 157, 0.2);
+        }
+
+        .modal-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--primary);
+            transition: transform 0.3s ease;
+        }
+
+        .close-btn:hover {
+            transform: rotate(90deg);
+        }
+
+        /* CALENDAR */
+        .calendar-container {
+            background: var(--glass);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 20px;
+            padding: 1.5rem;
+            backdrop-filter: blur(20px);
+            max-width: 860px;
+            margin: 0 auto;
+        }
+
+        .calendar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .calendar-nav {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .calendar-nav button {
+            width: 40px;
+            height: 40px;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 0.5rem;
+        }
+
+        .calendar-day-header {
+            text-align: center;
+            font-weight: 700;
+            color: var(--primary);
+            padding: 0.75rem;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+        }
+
+        .calendar-day {
+            aspect-ratio: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            cursor: pointer;
+            background: var(--surface-strong);
+            color: var(--text);
+            transition: all 0.3s ease;
+            font-weight: 600;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid var(--border);
+        }
+
+        .calendar-day:hover {
+            background: rgba(255, 107, 157, 0.2);
+            transform: scale(1.05);
+        }
+
+        .calendar-day.other-month {
+            opacity: 0.4;
+            cursor: default;
+        }
+
+        .calendar-day.today {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            box-shadow: 0 8px 24px rgba(255, 107, 157, 0.4);
+        }
+
+        .calendar-day.has-data::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 50%;
+            bottom: 4px;
+            animation: pulse 1s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.5); }
+        }
+
+        /* DATE PANEL */
+        .date-panel {
+            background: var(--surface-strong);
+            color: var(--text);
+            border-radius: 20px;
+            padding: 2rem;
+            margin-top: 2rem;
+            max-height: 400px;
+            overflow-y: auto;
+            box-shadow: 0 12px 40px rgba(255, 107, 157, 0.2);
+            animation: slideUp 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            border: 1px solid var(--border);
+        }
+
+        .date-panel-header {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .date-panel-section {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid rgba(255, 107, 157, 0.2);
+        }
+
+        .date-panel-section:last-child {
+            border-bottom: none;
+        }
+
+        /* TABS */
+        .tabs {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid rgba(255, 107, 157, 0.2);
+        }
+
+        .tab-btn {
+            background: none;
+            border: none;
+            padding: 1rem 1.5rem;
+            font-weight: 600;
+            color: var(--dark);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+            position: relative;
+        }
+
+        .tab-btn:hover {
+            color: var(--primary);
+        }
+
+        .tab-btn.active {
+            color: var(--primary);
+            border-bottom-color: var(--primary);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.3s ease-out;
+        }
+
+        /* CHART STYLES */
+        canvas {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* DRAGGABLE */
+        .draggable {
+            cursor: grab;
+            transition: all 0.2s ease;
+        }
+
+        .draggable.dragging {
+            opacity: 0.7;
+            cursor: grabbing;
+        }
+
+        /* ANIMATIONS */
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes heartBeat {
+            0% { transform: scale(1); }
+            25% { transform: scale(1.1); }
+            50% { transform: scale(1); }
+        }
+
+        .loading {
+            animation: spin 1s linear infinite;
+        }
+
+        .bounce-animation {
+            animation: bounce 0.5s ease-out;
+        }
+
+        /* CONFETTI */
+        .confetti {
+            position: fixed;
+            pointer-events: none;
+            animation: confettiFall 3s linear forwards;
+            z-index: 1500;
+        }
+
+        @keyframes confettiFall {
+            to {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* FLOATING HEARTS */
+        .floating-heart {
+            position: fixed;
+            font-size: 2rem;
+            pointer-events: none;
+            animation: floatUp 3s ease-out forwards;
+            z-index: 1500;
+        }
+
+        @keyframes floatUp {
+            to {
+                transform: translateY(-100vh) translateX(100px) scale(0);
+                opacity: 0;
+            }
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            main {
+                padding: 1rem 0.75rem;
+            }
+
+            .card {
+                padding: 1rem;
+            }
+
+            .calendar-container {
+                padding: 1rem;
+            }
+
+            .calendar-header {
+                justify-content: center;
+            }
+
+            .calendar-grid {
+                gap: 0.35rem;
+            }
+
+            .calendar-day {
+                font-size: 0.9rem;
+                min-height: 44px;
+            }
+
+            .date-panel {
+                padding: 1rem;
+            }
+
+            .modal-content {
+                max-width: 95%;
+            }
+
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stat-number {
+                font-size: 2rem;
+            }
+
+            .greeting {
+                font-size: 1.3rem;
+            }
+
+            .nav-toggle {
+                display: inline-flex;
+            }
+
+            .nav-menu {
+                position: fixed;
+                inset: 0;
+                background: linear-gradient(135deg, var(--surface-strong), var(--surface));
+                backdrop-filter: blur(18px);
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: stretch;
+                padding: 5.5rem 1.25rem 2rem;
+                gap: 0.75rem;
+                z-index: 1100;
+                transform: translateX(100%);
+                opacity: 0;
+                visibility: hidden;
+                pointer-events: none;
+                transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.3s ease, visibility 0.3s ease;
+                overflow-y: auto;
+            }
+
+            .nav-menu.mobile-visible {
+                transform: translateX(0);
+                opacity: 1;
+                visibility: visible;
+                pointer-events: auto;
+            }
+
+            .nav-menu.mobile-hidden {
+                transform: translateX(100%);
+                opacity: 0;
+                visibility: hidden;
+                pointer-events: none;
+            }
+
+            .nav-item {
+                width: 100%;
+                padding: 0.95rem 1rem;
+                font-size: 1rem;
+                border-radius: 16px;
+                text-align: left;
+                box-shadow: 0 6px 18px rgba(255, 107, 157, 0.08);
+            }
+        }
+
+        /* HOVER GLOW */
+        .glow:hover {
+            box-shadow: 0 0 20px rgba(255, 107, 157, 0.6);
+        }
+
+        /* INPUT TRANSITIONS */
+        input::placeholder {
+            color: rgba(26, 26, 46, 0.4);
+        }
+
+        /* STATUS BADGE */
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .badge-success {
+            background: rgba(6, 214, 160, 0.2);
+            color: var(--success);
+        }
+
+        .badge-warning {
+            background: rgba(255, 214, 10, 0.2);
+            color: var(--warning);
+        }
+
+        .badge-danger {
+            background: rgba(239, 71, 111, 0.2);
+            color: var(--danger);
+        }
+
+        /* GRADIENT BORDERS */
+        .gradient-border {
+            position: relative;
+            background: var(--glass);
+            border-radius: 20px;
+            padding: 1.5rem;
+            overflow: hidden;
+        }
+
+        .gradient-border::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, var(--primary), var(--secondary), var(--tertiary));
+            opacity: 0.1;
+            pointer-events: none;
+            border-radius: 20px;
+        }
+
+        /* STREAK DISPLAY */
+        .streak-display {
+            font-size: 2rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-align: center;
+            margin: 1rem 0;
+        }
+
+        .streak-label {
+            text-align: center;
+            color: var(--secondary);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: -0.5rem;
+        }
+
+        /* EMPTY STATE */
+        .empty-state {
+            text-align: center;
+            padding: 3rem 1rem;
+            color: var(--secondary);
+        }
+
+        .empty-state-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            opacity: 0.5;
+        }
+
+        .empty-state-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+        }
+
+        .empty-state-text {
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        .chart-card {
+            margin-top: 1rem;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 16px;
+            border: 1px solid var(--border);
+        }
+
+        .chart-title {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 0.75rem;
+        }
+
+        .chart-canvas {
+            width: 100%;
+            height: 220px;
+        }
+
+        .hydration-card {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .hydration-date {
+            font-size: 0.85rem;
+            color: var(--text-soft);
+            font-weight: 600;
+        }
+
+        /* TIME INPUT */
+        .time-inputs {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        /* COLOR PICKER */
+        .mood-selector {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+            gap: 0.7rem;
+            margin: 1rem auto 0;
+            max-width: 420px;
+            width: 100%;
+        }
+
+        .mood-option {
+            aspect-ratio: 1;
+            border: 2px solid rgba(255, 107, 157, 0.2);
+            border-radius: 16px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: clamp(1.4rem, 2vw, 2rem);
+            transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+            box-shadow: 0 8px 18px rgba(255, 107, 157, 0.08);
+            min-height: 70px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mood-option::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.35), transparent 70%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .mood-option:hover {
+            transform: translateY(-4px) scale(1.03);
+            border-color: var(--primary);
+        }
+
+        .mood-option:hover::after {
+            opacity: 1;
+        }
+
+        .mood-option.selected {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-color: var(--primary);
+            box-shadow: 0 10px 24px rgba(255, 107, 157, 0.35);
+            transform: translateY(-3px) scale(1.02);
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .mood-selector {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                gap: 0.6rem;
+                max-width: 100%;
+            }
+
+            .mood-option {
+                min-height: 64px;
+                border-radius: 14px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .mood-selector {
+                max-width: 480px;
+                gap: 0.9rem;
+            }
+
+            .mood-option {
+                min-height: 78px;
+                font-size: clamp(1.6rem, 1.3vw, 2.1rem);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- PARTICLES BACKGROUND -->
+    <div class="particles" id="particlesContainer"></div>
+
+    <!-- MAIN CONTAINER -->
+    <div class="container">
+        <!-- NAVIGATION -->
+        <nav>
+            <div class="nav-content">
+                <div class="nav-brand">❤️ Farah</div>
+                <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false"><span class="nav-toggle-icon"></span></button>
+                <div class="nav-menu" id="navMenu">
+                    <button class="nav-item active" data-section="dashboard">Dashboard</button>
+                    <button class="nav-item" data-section="workout">Workout</button>
+                    <button class="nav-item" data-section="study">Study</button>
+                    <button class="nav-item" data-section="calendar">Calendar</button>
+                    <button class="nav-item" data-section="planner">Planner</button>
+                    <button class="nav-item" data-section="notes">Notes</button>
+                    <button class="nav-item" data-section="water">Water</button>
+                    <button class="nav-item" data-section="stats">Stats</button>
+                    <button class="nav-item" data-section="settings">Settings</button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- MAIN CONTENT -->
+        <main>
+            <!-- DASHBOARD -->
+            <section id="dashboard" class="active">
+                <div class="greeting" id="greeting">Good Morning, Farah! ❤️</div>
+                <div class="quote" id="quote">Loading your inspiration...</div>
+
+                <div class="dashboard-grid">
+                    <div class="stat-card">
+                        <div class="stat-label">Today</div>
+                        <div class="stat-number" id="todayDate">-</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label">Workout Streak</div>
+                        <div class="stat-number" id="workoutStreak">0</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label">Study Streak</div>
+                        <div class="stat-number" id="studyStreak">0</div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-title">✨ Today's Status</div>
+                    <div class="checkbox-container" id="todayWorkoutCheck">
+                        <div class="checkbox-custom"></div>
+                        <span>Workout Completed</span>
+                    </div>
+                    <div class="checkbox-container" id="todayStudyCheck" style="margin-top: 1rem;">
+                        <div class="checkbox-custom"></div>
+                        <span>Study Completed</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-title">📊 Quick Stats</div>
+                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-top: 1rem;">
+                        <div style="text-align: center;">
+                            <div style="font-size: 1.5rem; font-weight: 700; color: var(--primary);" id="totalWorkouts">0</div>
+                            <div style="font-size: 0.85rem; color: var(--secondary); text-transform: uppercase; letter-spacing: 0.5px;">Total Workouts</div>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="font-size: 1.5rem; font-weight: 700; color: var(--primary);" id="totalStudyHours">0</div>
+                            <div style="font-size: 0.85rem; color: var(--secondary); text-transform: uppercase; letter-spacing: 0.5px;">Study Hours</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- WORKOUT TRACKER -->
+            <section id="workout">
+                <div class="card">
+                    <div class="card-title">💪 Today's Workout</div>
+                    <div class="checkbox-container" id="workoutCheckbox" style="margin-bottom: 1.5rem;">
+                        <div class="checkbox-custom"></div>
+                        <span>Completed</span>
+                    </div>
+                    <div class="form-group">
+                        <label>Workout Type</label>
+                        <select id="workoutType">
+                            <option value="">Select type</option>
+                            <option value="cardio">Cardio</option>
+                            <option value="strength">Strength</option>
+                            <option value="flexibility">Flexibility</option>
+                            <option value="sports">Sports</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Duration (minutes)</label>
+                        <input type="number" id="workoutDuration" placeholder="30" min="0">
+                    </div>
+                    <div class="form-group">
+                        <label>Mood After</label>
+                        <div class="mood-selector">
+                            <div class="mood-option" data-mood="great">🤩</div>
+                            <div class="mood-option" data-mood="good">😊</div>
+                            <div class="mood-option" data-mood="okay">😐</div>
+                            <div class="mood-option" data-mood="tired">😴</div>
+                            <div class="mood-option" data-mood="sore">😣</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Notes</label>
+                        <textarea id="workoutNotes" placeholder="How did it go?"></textarea>
+                    </div>
+                    <button class="btn-primary" id="saveWorkout">Save Today's Workout</button>
+                </div>
+
+                <div class="card">
+                    <div class="card-title">🔥 Your Streaks</div>
+                    <div class="streak-display" id="workoutCurrentStreak">0</div>
+                    <div class="streak-label">Current Streak</div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 2rem;">
+                        <div style="text-align: center;">
+                            <div style="font-size: 2rem; font-weight: 800; background: linear-gradient(135deg, #06d6a0, #00d4aa); -webkit-background-clip: text; -webkit-text-fill-color: transparent;" id="workoutLongestStreak">0</div>
+                            <div style="font-size: 0.85rem; color: var(--secondary); text-transform: uppercase; letter-spacing: 0.5px;">Longest Streak</div>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="font-size: 2rem; font-weight: 800; background: linear-gradient(135deg, #ffd60a, #ffa500); -webkit-background-clip: text; -webkit-text-fill-color: transparent;" id="workoutTotal">0</div>
+                            <div style="font-size: 0.85rem; color: var(--secondary); text-transform: uppercase; letter-spacing: 0.5px;">Total Workouts</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-title">📅 Recent Workouts</div>
+                    <div id="workoutList"></div>
+                </div>
+            </section>
+
+            <!-- STUDY TRACKER -->
+            <section id="study">
+                <div class="card">
+                    <div class="card-title">📚 New Study Session</div>
+                    <div class="form-group">
+                        <label>Subject</label>
+                        <input type="text" id="studySubject" placeholder="e.g., Mathematics">
+                    </div>
+                    <div class="form-group">
+                        <label>Topic</label>
+                        <input type="text" id="studyTopic" placeholder="e.g., Algebra">
+                    </div>
+                    <div class="time-inputs">
+                        <div class="form-group">
+                            <label>Hours</label>
+                            <input type="number" id="studyHours" placeholder="0" min="0" max="23">
+                        </div>
+                        <div class="form-group">
+                            <label>Minutes</label>
+                            <input type="number" id="studyMinutes" placeholder="0" min="0" max="59">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Difficulty</label>
+                        <select id="studyDifficulty">
+                            <option value="">Select difficulty</option>
+                            <option value="easy">Easy</option>
+                            <option value="medium">Medium</option>
+                            <option value="hard">Hard</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Mood</label>
+                        <div class="mood-selector">
+                            <div class="mood-option" data-mood="focused">🎯</div>
+                            <div class="mood-option" data-mood="motivated">💪</div>
+                            <div class="mood-option" data-mood="neutral">😐</div>
+                            <div class="mood-option" data-mood="distracted">😵</div>
+                            <div class="mood-option" data-mood="confused">🤔</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Notes</label>
+                        <textarea id="studyNotes" placeholder="What did you learn?"></textarea>
+                    </div>
+                    <button class="btn-primary" id="saveStudy">Save Study Session</button>
+                </div>
+
+                <div class="card">
+                    <div class="card-title">📊 Today's Study Time</div>
+                    <div style="text-align: center; margin: 2rem 0;">
+                        <div style="font-size: 3rem; font-weight: 800; background: linear-gradient(135deg, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;" id="todayStudyTotal">0h 0m</div>
+                        <div style="font-size: 0.85rem; color: var(--secondary); text-transform: uppercase; letter-spacing: 1px; margin-top: 0.5rem;">Completed Today</div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-title">📈 Study Statistics</div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.5rem;">
+                        <div style="text-align: center;">
+                            <div style="font-size: 1.5rem; font-weight: 800; color: var(--primary);" id="weeklyStudyTotal">0h</div>
+                            <div style="font-size: 0.85rem; color: var(--secondary); text-transform: uppercase; letter-spacing: 0.5px;">This Week</div>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="font-size: 1.5rem; font-weight: 800; color: var(--primary);" id="monthlyStudyTotal">0h</div>
+                            <div style="font-size: 0.85rem; color: var(--secondary); text-transform: uppercase; letter-spacing: 0.5px;">This Month</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-title">📝 Study Sessions</div>
+                    <div id="studyList"></div>
+                </div>
+            </section>
+
+            <!-- CALENDAR -->
+            <section id="calendar">
+                <div class="calendar-container">
+                    <div class="calendar-header">
+                        <button class="btn-primary btn-small" id="prevMonth">← Previous</button>
+                        <div style="font-size: 1.25rem; font-weight: 700; background: linear-gradient(135deg, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;" id="monthYear">-</div>
+                        <button class="btn-primary btn-small" id="nextMonth">Next →</button>
+                        <button class="btn-secondary btn-small" id="todayBtn">Today</button>
+                    </div>
+                    <div class="calendar-grid" id="calendarGrid"></div>
+                    <div id="datePanel" class="date-panel" style="display: none;"></div>
+                </div>
+            </section>
+
+            <!-- DAILY PLANNER -->
+            <section id="planner">
+                <div class="card">
+                    <div class="card-title">➕ Add Task</div>
+                    <div class="form-group">
+                        <label>Task</label>
+                        <input type="text" id="plannerTaskInput" placeholder="What do you need to do?">
+                    </div>
+                    <div class="form-group">
+                        <label>Date</label>
+                        <input type="date" id="plannerDate">
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                        <div class="form-group">
+                            <label>Priority</label>
+                            <select id="plannerPriority">
+                                <option value="low">Low</option>
+                                <option value="medium" selected>Medium</option>
+                                <option value="high">High</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Category</label>
+                            <select id="plannerCategory">
+                                <option value="work">Work</option>
+                                <option value="study">Study</option>
+                                <option value="cooking">Cooking</option>
+                                <option value="personal">Personal</option>
+                                <option value="health">Health</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button class="btn-primary" id="addPlannerTask">Add Task</button>
+                </div>
+
+                <div class="card">
+                    <div class="card-title">✅ Today's Tasks</div>
+                    <div id="plannerList"></div>
+                </div>
+            </section>
+
+            <!-- NOTES -->
+            <section id="notes">
+                <div class="card">
+                    <div class="card-title">📝 New Note</div>
+                    <div class="form-group">
+                        <label>Note Title</label>
+                        <input type="text" id="noteTitle" placeholder="Give your note a title">
+                    </div>
+                    <div class="form-group">
+                        <label>Content</label>
+                        <textarea id="noteContent" placeholder="Write your thoughts..." style="min-height: 200px;"></textarea>
+                    </div>
+                    <div style="display: flex; gap: 1rem;">
+                        <button class="btn-primary" id="saveNote">Save Note</button>
+                        <button class="btn-secondary" id="pinNote">📌 Pin</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-title">📚 Your Notes</div>
+                    <input type="text" id="noteSearch" placeholder="Search notes..." style="margin-bottom: 1rem;">
+                    <div id="notesList"></div>
+                </div>
+            </section>
+
+            <!-- WATER TRACKER -->
+            <section id="water">
+                <div class="card">
+                    <div class="card-title">💧 Hydration Goal</div>
+                    <div style="text-align: center; margin: 2rem 0;">
+                        <svg width="150" height="200" viewBox="0 0 150 200" style="margin: 0 auto; display: block;">
+                            <defs>
+                                <linearGradient id="waterGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                                    <stop offset="0%" style="stop-color:var(--primary);stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:var(--tertiary);stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                            <rect x="30" y="20" width="90" height="140" rx="10" fill="none" stroke="var(--primary)" stroke-width="3"/>
+                            <rect id="waterLevel" x="30" y="160" width="90" height="0" fill="url(#waterGradient)" rx="10"/>
+                        </svg>
+                    </div>
+                    <div style="text-align: center; margin-bottom: 2rem;">
+                        <div style="font-size: 2rem; font-weight: 800; background: linear-gradient(135deg, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;" id="waterGlassCount">0</div>
+                        <div style="font-size: 0.85rem; color: var(--secondary); text-transform: uppercase; letter-spacing: 1px;">Glasses Today</div>
+                    </div>
+                    <button class="btn-primary" id="addWater" style="width: 100%;">💧 Add Glass</button>
+                    <button class="btn-secondary" id="resetWater" style="width: 100%; margin-top: 0.5rem;">Reset</button>
+                </div>
+
+                <div class="card">
+                    <div class="card-title">💡 Hydration Reminder</div>
+                    <div style="text-align: center; padding: 1rem; background: rgba(255, 107, 157, 0.1); border-radius: 12px; color: var(--primary); font-weight: 600; font-size: 0.95rem;">
+                        "Farah, drink water! Your body and mind will thank you. 💙"
+                    </div>
+                </div>
+            </section>
+
+            <!-- STATISTICS -->
+            <section id="stats">
+                <div class="card">
+                    <div class="card-title">📊 Overall Statistics</div>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin-top: 1.5rem;">
+                        <div style="text-align: center; padding: 1rem; background: rgba(255, 107, 157, 0.1); border-radius: 12px;">
+                            <div style="font-size: 2rem; font-weight: 800; color: var(--primary);" id="statsTotalWorkouts">0</div>
+                            <div style="font-size: 0.85rem; color: var(--secondary); text-transform: uppercase; letter-spacing: 0.5px;">Workouts</div>
+                        </div>
+                        <div style="text-align: center; padding: 1rem; background: rgba(160, 196, 255, 0.1); border-radius: 12px;">
+                            <div style="font-size: 2rem; font-weight: 800; background: linear-gradient(135deg, var(--tertiary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;" id="statsTotalStudy">0h</div>
+                            <div style="font-size: 0.85rem; color: var(--secondary); text-transform: uppercase; letter-spacing: 0.5px;">Study Hours</div>
+                        </div>
+                        <div style="text-align: center; padding: 1rem; background: rgba(199, 125, 255, 0.1); border-radius: 12px;">
+                            <div style="font-size: 2rem; font-weight: 800; background: linear-gradient(135deg, var(--secondary), var(--primary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;" id="statsTotalNotes">0</div>
+                            <div style="font-size: 0.85rem; color: var(--secondary); text-transform: uppercase; letter-spacing: 0.5px;">Notes</div>
+                        </div>
+                        <div style="text-align: center; padding: 1rem; background: rgba(6, 214, 160, 0.1); border-radius: 12px;">
+                            <div style="font-size: 2rem; font-weight: 800; color: var(--success);" id="statsWaterToday">0</div>
+                            <div style="font-size: 0.85rem; color: var(--secondary); text-transform: uppercase; letter-spacing: 0.5px;">Water Today</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-title">📈 Activity Charts</div>
+                    <div class="chart-card">
+                        <div class="chart-title">Workout Trend</div>
+                        <canvas id="workoutChart" class="chart-canvas"></canvas>
+                    </div>
+                    <div class="chart-card">
+                        <div class="chart-title">Study Hours Trend</div>
+                        <canvas id="studyChart" class="chart-canvas"></canvas>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SETTINGS -->
+            <section id="settings">
+                <div class="card">
+                    <div class="card-title">🎨 Theme</div>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 1rem; margin-top: 1rem;">
+                        <button class="btn-secondary" data-theme="light" style="background: linear-gradient(135deg, #fff, #f5e6f3); color: var(--dark);">☀️ Light</button>
+                        <button class="btn-secondary" data-theme="dark" style="background: linear-gradient(135deg, #1a1a2e, #2a2a4e); color: white;">🌙 Dark</button>
+                        <button class="btn-secondary" data-theme="purple" style="background: linear-gradient(135deg, #a0c4ff, #c77dff); color: white;">💜 Purple</button>
+                        <button class="btn-secondary" data-theme="pastel" style="background: linear-gradient(135deg, #ffc0d9, #d4a5ff); color: white;">🌸 Pastel</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-title">🗑️ Clear All Data</div>
+                    <p style="margin-bottom: 1rem; color: var(--text-soft); line-height: 1.6;">This will erase all your saved wellness data from this browser. It cannot be undone.</p>
+                    <button class="btn-danger" id="clearData" style="width: 100%; background: rgba(239, 71, 111, 0.2); color: var(--danger);">Delete Everything</button>
+                </div>
+
+                <div class="card">
+                    <div class="card-title">❤️ About</div>
+                    <p style="text-align: center; color: var(--secondary); font-size: 0.95rem;">
+                        Built with love for Farah ❤️<br>
+                        <br>
+                        This app is your personal wellness companion. Track your progress, celebrate your achievements, and remember: every small step counts.<br>
+                        <br>
+                        <strong>"Farah, your future self will thank you for the progress you make today."</strong>
+                    </p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        // ============================================
+        // STATE MANAGEMENT
+        // ============================================
+        const state = {
+            workouts: [],
+            studies: [],
+            notes: [],
+            journals: [],
+            moods: [],
+            habits: [],
+            goals: [],
+            water: [],
+            currentTheme: 'light',
+            currentMood: null,
+            currentDate: new Date(),
+            currentSection: 'dashboard',
+            fontSize: 'normal',
+            animationIntensity: 'normal'
+        };
+
+        // ============================================
+        // STORAGE FUNCTIONS
+        // ============================================
+        const storage = {
+            save: (key, data) => {
+                localStorage.setItem(key, JSON.stringify(data));
+            },
+            load: (key) => {
+                const data = localStorage.getItem(key);
+                return data ? JSON.parse(data) : null;
+            },
+            remove: (key) => {
+                localStorage.removeItem(key);
+            }
+        };
+
+        // ============================================
+        // INITIALIZATION
+        // ============================================
+        function initApp() {
+            loadState();
+            setupEventListeners();
+            createParticles();
+            setupCustomScrollbar();
+            applyPreferences();
+            updateDashboard();
+            renderCalendar();
+            setTheme(state.currentTheme);
+            showSection(state.currentSection);
+            updateNavActive(document.querySelector(`[data-section="${state.currentSection}"]`));
+            window.addEventListener('beforeunload', saveState);
+            window.addEventListener('pagehide', saveState);
+            document.addEventListener('visibilitychange', () => {
+                if (document.visibilityState === 'hidden') {
+                    saveState();
+                }
+            });
+        }
+
+        function loadState() {
+            const saved = storage.load('farah-state');
+            if (saved) {
+                Object.assign(state, saved);
+            }
+            const savedPlannerTasks = storage.load('farah-planner-tasks');
+            if (savedPlannerTasks) {
+                plannerTasks = savedPlannerTasks;
+            }
+            state.currentDate = new Date();
+            if (!state.currentSection) state.currentSection = 'dashboard';
+            if (!state.fontSize) state.fontSize = 'normal';
+            if (!state.animationIntensity) state.animationIntensity = 'normal';
+        }
+
+        function saveState() {
+            storage.save('farah-state', state);
+            storage.save('farah-planner-tasks', plannerTasks);
+        }
+
+        function applyPreferences() {
+            document.body.setAttribute('data-font-size', state.fontSize || 'normal');
+            document.body.setAttribute('data-animation-intensity', state.animationIntensity || 'normal');
+            const fontSelect = document.getElementById('fontSize');
+            const animSelect = document.getElementById('animationIntensity');
+            if (fontSelect) fontSelect.value = state.fontSize || 'normal';
+            if (animSelect) animSelect.value = state.animationIntensity || 'normal';
+        }
+
+        // ============================================
+        // PARTICLES BACKGROUND
+        // ============================================
+        function createParticles() {
+            const container = document.getElementById('particlesContainer');
+            for (let i = 0; i < 5; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.width = Math.random() * 100 + 50 + 'px';
+                particle.style.height = particle.style.width;
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.top = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 20 + 's';
+                container.appendChild(particle);
+            }
+        }
+
+        // ============================================
+        // NAVIGATION
+        // ============================================
+        function setupEventListeners() {
+            // Navigation
+            document.querySelectorAll('.nav-item').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const section = btn.getAttribute('data-section');
+                    state.currentSection = section;
+                    showSection(section);
+                    updateNavActive(btn);
+                    closeMobileMenu();
+                    saveState();
+                });
+            });
+
+            // Mobile menu toggle
+            const navToggle = document.getElementById('navToggle');
+            const navMenu = document.getElementById('navMenu');
+            navToggle.addEventListener('click', () => {
+                const isOpen = navMenu.classList.contains('mobile-visible');
+                navMenu.classList.toggle('mobile-hidden', isOpen);
+                navMenu.classList.toggle('mobile-visible', !isOpen);
+                navToggle.classList.toggle('active', !isOpen);
+                navToggle.setAttribute('aria-expanded', String(!isOpen));
+            });
+
+            window.addEventListener('resize', () => {
+                if (window.innerWidth > 768) {
+                    navMenu.classList.remove('mobile-visible', 'mobile-hidden');
+                    navToggle.classList.remove('active');
+                    navToggle.setAttribute('aria-expanded', 'false');
+                }
+            });
+
+            // Theme buttons
+            document.querySelectorAll('[data-theme]').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const theme = btn.getAttribute('data-theme');
+                    setTheme(theme);
+                });
+            });
+
+            const plannerDate = document.getElementById('plannerDate');
+            if (plannerDate && !plannerDate.value) {
+                plannerDate.value = new Date().toISOString().split('T')[0];
+            }
+
+            // WORKOUT EVENTS
+            document.getElementById('saveWorkout').addEventListener('click', saveWorkout);
+            document.getElementById('workoutCheckbox').addEventListener('click', toggleWorkoutCheckbox);
+            document.querySelectorAll('#workout .mood-option').forEach(opt => {
+                opt.addEventListener('click', function() {
+                    document.querySelectorAll('#workout .mood-option').forEach(o => o.classList.remove('selected'));
+                    this.classList.add('selected');
+                });
+            });
+
+            // STUDY EVENTS
+            document.getElementById('saveStudy').addEventListener('click', saveStudy);
+            document.querySelectorAll('#study .mood-option').forEach(opt => {
+                opt.addEventListener('click', function() {
+                    document.querySelectorAll('#study .mood-option').forEach(o => o.classList.remove('selected'));
+                    this.classList.add('selected');
+                });
+            });
+
+            // CALENDAR EVENTS
+            document.getElementById('prevMonth').addEventListener('click', previousMonth);
+            document.getElementById('nextMonth').addEventListener('click', nextMonth);
+            document.getElementById('todayBtn').addEventListener('click', goToToday);
+
+            // PLANNER EVENTS
+            document.getElementById('addPlannerTask').addEventListener('click', addPlannerTask);
+
+            // NOTES EVENTS
+            document.getElementById('saveNote').addEventListener('click', saveNote);
+            document.getElementById('noteSearch').addEventListener('input', filterNotes);
+
+            // WATER EVENTS
+            document.getElementById('addWater').addEventListener('click', addWater);
+            document.getElementById('resetWater').addEventListener('click', resetWater);
+
+            // SETTINGS EVENTS
+            document.getElementById('clearData').addEventListener('click', clearAllData);
+
+            // TODAY'S CHECKS
+            document.getElementById('todayWorkoutCheck').addEventListener('click', toggleTodayWorkout);
+            document.getElementById('todayStudyCheck').addEventListener('click', toggleTodayStudy);
+        }
+
+        function showSection(sectionId) {
+            document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
+            document.getElementById(sectionId).classList.add('active');
+            state.currentSection = sectionId;
+        }
+
+        function updateNavActive(btn) {
+            document.querySelectorAll('.nav-item').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+        }
+
+        function closeMobileMenu() {
+            const navMenu = document.getElementById('navMenu');
+            const navToggle = document.getElementById('navToggle');
+            navMenu.classList.remove('mobile-visible');
+            navMenu.classList.add('mobile-hidden');
+            navToggle.classList.remove('active');
+            navToggle.setAttribute('aria-expanded', 'false');
+        }
+
+        // ============================================
+        // THEME SYSTEM
+        // ============================================
+        function setTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            document.body.setAttribute('data-theme', theme);
+            state.currentTheme = theme;
+            saveState();
+        }
+
+        // ============================================
+        // DASHBOARD
+        // ============================================
+        function updateDashboard() {
+            updateGreeting();
+            updateQuote();
+            updateTodayDate();
+            updateStreaks();
+            updateDashboardStats();
+            updateTodayChecks();
+        }
+
+        function updateGreeting() {
+            const hour = new Date().getHours();
+            let greeting = 'Good Morning';
+            if (hour >= 12 && hour < 17) greeting = 'Good Afternoon';
+            if (hour >= 17) greeting = 'Good Evening';
+            document.getElementById('greeting').textContent = `${greeting}, Farah! ❤️`;
+        }
+
+        function updateQuote() {
+            const quotes = [
+                "Farah, your consistency is beautiful.",
+                "Farah, one small step today is still progress.",
+                "Farah, your future self will thank you.",
+                "Don't give up, Farah! 🌸",
+                "Farah, you are stronger than you think.",
+                "Every workout is a victory, Farah.",
+                "Farah, progress over perfection.",
+                "You got this, Farah! ❤️"
+            ];
+            const quote = quotes[Math.floor(Math.random() * quotes.length)];
+            document.getElementById('quote').textContent = `💭 ${quote}`;
+        }
+
+        function updateTodayDate() {
+            const today = new Date();
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            document.getElementById('todayDate').textContent = today.toLocaleDateString('en-US', options);
+        }
+
+        function updateStreaks() {
+            const today = new Date().toDateString();
+            let workoutStreak = 0;
+            let studyStreak = 0;
+
+            // Calculate workout streak
+            let currentDate = new Date();
+            for (let i = 0; i < 365; i++) {
+                const dateStr = currentDate.toDateString();
+                if (state.workouts.some(w => new Date(w.date).toDateString() === dateStr)) {
+                    workoutStreak++;
+                    currentDate.setDate(currentDate.getDate() - 1);
+                } else {
+                    break;
+                }
+            }
+
+            // Calculate study streak
+            currentDate = new Date();
+            for (let i = 0; i < 365; i++) {
+                const dateStr = currentDate.toDateString();
+                if (state.studies.some(s => new Date(s.date).toDateString() === dateStr)) {
+                    studyStreak++;
+                    currentDate.setDate(currentDate.getDate() - 1);
+                } else {
+                    break;
+                }
+            }
+
+            document.getElementById('workoutStreak').textContent = workoutStreak;
+            document.getElementById('studyStreak').textContent = studyStreak;
+            document.getElementById('workoutCurrentStreak').textContent = workoutStreak;
+            document.getElementById('workoutLongestStreak').textContent = Math.max(...state.workouts.map(w => w.streak || 0), 0);
+            document.getElementById('workoutTotal').textContent = state.workouts.length;
+        }
+
+        function updateDashboardStats() {
+            document.getElementById('totalWorkouts').textContent = state.workouts.length;
+            const totalStudyMinutes = state.studies.reduce((sum, s) => sum + (s.hours * 60 + s.minutes), 0);
+            const hours = Math.floor(totalStudyMinutes / 60);
+            document.getElementById('totalStudyHours').textContent = hours;
+        }
+
+        function updateTodayChecks() {
+            const today = new Date().toDateString();
+            const hasWorkout = state.workouts.some(w => new Date(w.date).toDateString() === today);
+            const hasStudy = state.studies.some(s => new Date(s.date).toDateString() === today);
+
+            const workoutCheck = document.querySelector('#todayWorkoutCheck .checkbox-custom');
+            const studyCheck = document.querySelector('#todayStudyCheck .checkbox-custom');
+
+            if (hasWorkout) {
+                workoutCheck.classList.add('checked');
+                workoutCheck.textContent = '✓';
+            } else {
+                workoutCheck.classList.remove('checked');
+                workoutCheck.textContent = '';
+            }
+
+            if (hasStudy) {
+                studyCheck.classList.add('checked');
+                studyCheck.textContent = '✓';
+            } else {
+                studyCheck.classList.remove('checked');
+                studyCheck.textContent = '';
+            }
+        }
+
+        function toggleTodayWorkout() {
+            const today = new Date().toDateString();
+            const existing = state.workouts.find(w => new Date(w.date).toDateString() === today);
+            if (existing) {
+                state.workouts = state.workouts.filter(w => w !== existing);
+            } else {
+                state.workouts.push({ date: new Date(), completed: true });
+            }
+            saveState();
+            updateDashboard();
+        }
+
+        function toggleTodayStudy() {
+            const today = new Date().toDateString();
+            const existing = state.studies.find(s => new Date(s.date).toDateString() === today);
+            if (existing) {
+                state.studies = state.studies.filter(s => s !== existing);
+            } else {
+                state.studies.push({ date: new Date(), hours: 0, minutes: 0 });
+            }
+            saveState();
+            updateDashboard();
+        }
+
+        // ============================================
+        // WORKOUT TRACKER
+        // ============================================
+        function saveWorkout() {
+            const type = document.getElementById('workoutType').value;
+            const duration = parseInt(document.getElementById('workoutDuration').value) || 0;
+            const mood = document.querySelector('#workout .mood-option.selected')?.getAttribute('data-mood') || 'neutral';
+            const notes = document.getElementById('workoutNotes').value;
+
+            if (!type) {
+                alert('Please select a workout type!');
+                return;
+            }
+
+            const workout = {
+                id: Date.now(),
+                date: new Date(),
+                type,
+                duration,
+                mood,
+                notes
+            };
+
+            state.workouts.push(workout);
+            saveState();
+            updateDashboard();
+            renderWorkoutList();
+            showConfetti();
+            showFloatingHeart();
+            resetWorkoutForm();
+        }
+
+        function toggleWorkoutCheckbox() {
+            const checkbox = document.querySelector('#workoutCheckbox .checkbox-custom');
+            checkbox.classList.toggle('checked');
+            if (checkbox.classList.contains('checked')) {
+                checkbox.textContent = '✓';
+            } else {
+                checkbox.textContent = '';
+            }
+        }
+
+        function renderWorkoutList() {
+            const list = document.getElementById('workoutList');
+            const sortedWorkouts = [...state.workouts].sort((a, b) => new Date(b.date) - new Date(a.date));
+
+            if (sortedWorkouts.length === 0) {
+                list.innerHTML = '<div class="empty-state"><div class="empty-state-icon">💪</div><div class="empty-state-title">No Workouts Yet</div><div class="empty-state-text">Start your first workout today!</div></div>';
+                return;
+            }
+
+            list.innerHTML = sortedWorkouts.map(w => `
+                <div class="checkbox-container" style="position: relative;">
+                    <div class="checkbox-custom checked">✓</div>
+                    <div style="flex: 1;">
+                        <div style="font-weight: 600; margin-bottom: 0.25rem; text-transform: capitalize;">${w.type}</div>
+                        <div style="font-size: 0.85rem; color: var(--secondary);">${w.duration} mins • ${new Date(w.date).toLocaleDateString()}</div>
+                    </div>
+                    <div style="position: absolute; right: 3.2rem; top: 50%; transform: translateY(-50%); font-size: 1.2rem;" title="Mood after workout">${w.mood === 'great' ? '🤩' : w.mood === 'good' ? '😊' : w.mood === 'okay' ? '😐' : w.mood === 'tired' ? '😴' : '😣'}</div>
+                    <button class="btn-icon btn-small" style="background: rgba(239, 71, 111, 0.2); color: var(--danger); width: 35px; height: 35px; position: absolute; right: 0.5rem; top: 50%; transform: translateY(-50%);" onclick="deleteWorkout(${w.id})">🗑️</button>
+                </div>
+            `).join('');
+        }
+
+        function deleteWorkout(id) {
+            if (!confirm('Delete this workout entry?')) return;
+            state.workouts = state.workouts.filter(w => w.id !== id);
+            saveState();
+            updateDashboard();
+            renderWorkoutList();
+        }
+
+        function resetWorkoutForm() {
+            document.getElementById('workoutType').value = '';
+            document.getElementById('workoutDuration').value = '';
+            document.getElementById('workoutNotes').value = '';
+            document.querySelectorAll('#workout .mood-option').forEach(o => o.classList.remove('selected'));
+        }
+
+        // ============================================
+        // STUDY TRACKER
+        // ============================================
+        function saveStudy() {
+            const subject = document.getElementById('studySubject').value;
+            const topic = document.getElementById('studyTopic').value;
+            const hours = parseInt(document.getElementById('studyHours').value) || 0;
+            const minutes = parseInt(document.getElementById('studyMinutes').value) || 0;
+            const difficulty = document.getElementById('studyDifficulty').value;
+            const mood = document.querySelector('#study .mood-option.selected')?.getAttribute('data-mood') || 'neutral';
+            const notes = document.getElementById('studyNotes').value;
+
+            if (!subject || (hours === 0 && minutes === 0)) {
+                alert('Please fill in subject and duration!');
+                return;
+            }
+
+            const session = {
+                id: Date.now(),
+                date: new Date(),
+                subject,
+                topic,
+                hours,
+                minutes,
+                difficulty,
+                mood,
+                notes
+            };
+
+            state.studies.push(session);
+            saveState();
+            updateDashboard();
+            renderStudyList();
+            updateStudyStats();
+            showConfetti();
+            showFloatingHeart();
+            resetStudyForm();
+        }
+
+        function resetStudyForm() {
+            document.getElementById('studySubject').value = '';
+            document.getElementById('studyTopic').value = '';
+            document.getElementById('studyHours').value = '';
+            document.getElementById('studyMinutes').value = '';
+            document.getElementById('studyDifficulty').value = '';
+            document.getElementById('studyNotes').value = '';
+            document.querySelectorAll('#study .mood-option').forEach(o => o.classList.remove('selected'));
+        }
+
+        function renderStudyList() {
+            const list = document.getElementById('studyList');
+            const sortedStudies = [...state.studies].sort((a, b) => new Date(b.date) - new Date(a.date));
+
+            if (sortedStudies.length === 0) {
+                list.innerHTML = '<div class="empty-state"><div class="empty-state-icon">📚</div><div class="empty-state-title">No Study Sessions Yet</div><div class="empty-state-text">Start learning today!</div></div>';
+                return;
+            }
+
+            list.innerHTML = sortedStudies.map(s => `
+                <div class="checkbox-container" style="position: relative;">
+                    <div class="checkbox-custom checked">✓</div>
+                    <div style="flex: 1;">
+                        <div style="font-weight: 600; margin-bottom: 0.25rem;">${s.subject}</div>
+                        <div style="font-size: 0.85rem; color: var(--secondary);">${s.hours}h ${s.minutes}m • ${s.topic || 'General'} • ${new Date(s.date).toLocaleDateString()}</div>
+                    </div>
+                    <button class="btn-icon btn-small" style="background: rgba(239, 71, 111, 0.2); color: var(--danger); width: 35px; height: 35px; position: absolute; right: 0.5rem; top: 50%; transform: translateY(-50%);" onclick="deleteStudy(${s.id})">🗑️</button>
+                </div>
+            `).join('');
+        }
+
+        function deleteStudy(id) {
+            if (!confirm('Delete this study session?')) return;
+            state.studies = state.studies.filter(s => s.id !== id);
+            saveState();
+            updateDashboard();
+            renderStudyList();
+            updateStudyStats();
+        }
+
+        function updateStudyStats() {
+            const today = new Date();
+            const todayStart = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+            const todayEnd = new Date(todayStart.getTime() + 24 * 60 * 60 * 1000);
+
+            const todayStudy = state.studies.filter(s => new Date(s.date) >= todayStart && new Date(s.date) < todayEnd);
+            const todayMinutes = todayStudy.reduce((sum, s) => sum + (s.hours * 60 + s.minutes), 0);
+            const todayHours = Math.floor(todayMinutes / 60);
+            const remainingMinutes = todayMinutes % 60;
+
+            document.getElementById('todayStudyTotal').textContent = `${todayHours}h ${remainingMinutes}m`;
+
+            // Weekly stats
+            const weekStart = new Date(today);
+            weekStart.setDate(today.getDate() - today.getDay());
+            const weekStudy = state.studies.filter(s => new Date(s.date) >= weekStart);
+            const weekMinutes = weekStudy.reduce((sum, s) => sum + (s.hours * 60 + s.minutes), 0);
+            const weekHours = Math.floor(weekMinutes / 60);
+            document.getElementById('weeklyStudyTotal').textContent = `${weekHours}h`;
+
+            // Monthly stats
+            const monthStart = new Date(today.getFullYear(), today.getMonth(), 1);
+            const monthStudy = state.studies.filter(s => new Date(s.date) >= monthStart);
+            const monthMinutes = monthStudy.reduce((sum, s) => sum + (s.hours * 60 + s.minutes), 0);
+            const monthHours = Math.floor(monthMinutes / 60);
+            document.getElementById('monthlyStudyTotal').textContent = `${monthHours}h`;
+        }
+
+        // ============================================
+        // CALENDAR
+        // ============================================
+        function renderCalendar() {
+            const year = state.currentDate.getFullYear();
+            const month = state.currentDate.getMonth();
+            const firstDay = new Date(year, month, 1);
+            const lastDay = new Date(year, month + 1, 0);
+            const daysInMonth = lastDay.getDate();
+            const startingDayOfWeek = firstDay.getDay();
+
+            const monthYearElement = document.getElementById('monthYear');
+            monthYearElement.textContent = firstDay.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+
+            const calendarGrid = document.getElementById('calendarGrid');
+            calendarGrid.innerHTML = '';
+
+            // Day headers
+            const dayHeaders = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+            dayHeaders.forEach(day => {
+                const header = document.createElement('div');
+                header.className = 'calendar-day-header';
+                header.textContent = day;
+                calendarGrid.appendChild(header);
+            });
+
+            // Previous month days
+            const prevMonthLastDay = new Date(year, month, 0).getDate();
+            for (let i = startingDayOfWeek - 1; i >= 0; i--) {
+                const day = document.createElement('div');
+                day.className = 'calendar-day other-month';
+                day.textContent = prevMonthLastDay - i;
+                calendarGrid.appendChild(day);
+            }
+
+            // Current month days
+            for (let day = 1; day <= daysInMonth; day++) {
+                const dayElement = document.createElement('div');
+                dayElement.className = 'calendar-day';
+                dayElement.textContent = day;
+
+                const currentDate = new Date(year, month, day);
+                const today = new Date();
+
+                if (currentDate.toDateString() === today.toDateString()) {
+                    dayElement.classList.add('today');
+                }
+
+                const dateStr = currentDate.toDateString();
+                if (state.workouts.some(w => new Date(w.date).toDateString() === dateStr) ||
+                    state.studies.some(s => new Date(s.date).toDateString() === dateStr)) {
+                    dayElement.classList.add('has-data');
+                }
+
+                dayElement.addEventListener('click', () => showDatePanel(new Date(year, month, day)));
+                calendarGrid.appendChild(dayElement);
+            }
+
+            // Next month days
+            const totalCells = calendarGrid.children.length;
+            const remainingCells = 42 - totalCells; // 6 rows * 7 days
+            for (let day = 1; day <= remainingCells; day++) {
+                const dayElement = document.createElement('div');
+                dayElement.className = 'calendar-day other-month';
+                dayElement.textContent = day;
+                calendarGrid.appendChild(dayElement);
+            }
+        }
+
+        function previousMonth() {
+            state.currentDate.setMonth(state.currentDate.getMonth() - 1);
+            renderCalendar();
+        }
+
+        function nextMonth() {
+            state.currentDate.setMonth(state.currentDate.getMonth() + 1);
+            renderCalendar();
+        }
+
+        function goToToday() {
+            state.currentDate = new Date();
+            renderCalendar();
+        }
+
+        function showDatePanel(date) {
+            const datePanel = document.getElementById('datePanel');
+            const dateStr = date.toDateString();
+
+            const dayWorkouts = state.workouts.filter(w => new Date(w.date).toDateString() === dateStr);
+            const dayStudies = state.studies.filter(s => new Date(s.date).toDateString() === dateStr);
+
+            let html = `
+                <div class="date-panel-header">${date.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}</div>
+                <div style="margin-bottom: 1rem; color: var(--text-soft);">You are doing so beautifully, Farah. 🌸</div>
+            `;
+
+            if (dayWorkouts.length > 0) {
+                html += '<div class="date-panel-section"><strong>💪 Workouts</strong><div style="margin-top: 0.5rem;">';
+                dayWorkouts.forEach(w => {
+                    html += `<div style="padding: 0.5rem; background: rgba(255, 107, 157, 0.1); border-radius: 8px; margin-bottom: 0.5rem;">${w.type} • ${w.duration}m</div>`;
+                });
+                html += '</div></div>';
+            }
+
+            if (dayStudies.length > 0) {
+                html += '<div class="date-panel-section"><strong>📚 Study</strong><div style="margin-top: 0.5rem;">';
+                dayStudies.forEach(s => {
+                    html += `<div style="padding: 0.5rem; background: rgba(160, 196, 255, 0.1); border-radius: 8px; margin-bottom: 0.5rem;">${s.subject} • ${s.hours}h ${s.minutes}m</div>`;
+                });
+                html += '</div></div>';
+            }
+
+            if (dayWorkouts.length === 0 && dayStudies.length === 0) {
+                html += '<div class="empty-state"><div class="empty-state-icon">✨</div><div class="empty-state-text">No work today, lovely. If you have nothing on your plate, just love your Amanu. 💖</div></div>';
+            }
+
+            datePanel.innerHTML = html;
+            datePanel.style.display = 'block';
+            requestAnimationFrame(() => datePanel.scrollIntoView({ behavior: 'smooth', block: 'start' }));
+        }
+
+        // ============================================
+        // DAILY PLANNER
+        // ============================================
+        let plannerTasks = [];
+
+        function addPlannerTask() {
+            const taskInput = document.getElementById('plannerTaskInput').value;
+            const priority = document.getElementById('plannerPriority').value;
+            const category = document.getElementById('plannerCategory').value;
+            const taskDate = document.getElementById('plannerDate').value || new Date().toISOString().split('T')[0];
+
+            if (!taskInput) {
+                alert('Please enter a task!');
+                return;
+            }
+
+            const task = {
+                id: Date.now(),
+                text: taskInput,
+                priority,
+                category,
+                date: taskDate,
+                completed: false,
+                createdAt: new Date()
+            };
+
+            plannerTasks.push(task);
+            saveState();
+            document.getElementById('plannerTaskInput').value = '';
+            document.getElementById('plannerDate').value = taskDate;
+            renderPlannerList();
+        }
+
+        function renderPlannerList() {
+            const list = document.getElementById('plannerList');
+
+            if (plannerTasks.length === 0) {
+                list.innerHTML = '<div class="empty-state"><div class="empty-state-icon">✅</div><div class="empty-state-title">No Tasks Yet</div><div class="empty-state-text">Add your first task!</div></div>';
+                return;
+            }
+
+            const sorted = [...plannerTasks].sort((a, b) => {
+                const priorityOrder = { 'high': 0, 'medium': 1, 'low': 2 };
+                const dateCompare = new Date(a.date || a.createdAt) - new Date(b.date || b.createdAt);
+                return dateCompare || priorityOrder[a.priority] - priorityOrder[b.priority];
+            });
+
+            list.innerHTML = sorted.map(task => `
+                <div class="checkbox-container" style="position: relative; ${task.completed ? 'opacity: 0.6;' : ''}">
+                    <div class="checkbox-custom ${task.completed ? 'checked' : ''}" onclick="togglePlannerTask(${task.id})">${task.completed ? '✓' : ''}</div>
+                    <div style="flex: 1; ${task.completed ? 'text-decoration: line-through;' : ''}">
+                        <div style="font-weight: 600; margin-bottom: 0.25rem;">${task.text}</div>
+                        <div style="font-size: 0.75rem; color: var(--secondary); text-transform: uppercase;">${task.category} • ${task.date ? new Date(task.date).toLocaleDateString() : 'No date'} • <span class="badge badge-${task.priority === 'high' ? 'danger' : task.priority === 'medium' ? 'warning' : 'success'}">${task.priority}</span></div>
+                    </div>
+                    <button class="btn-icon btn-small" style="background: rgba(239, 71, 111, 0.2); color: var(--danger); width: 35px; height: 35px;" onclick="deletePlannerTask(${task.id})">🗑️</button>
+                </div>
+            `).join('');
+        }
+
+        function togglePlannerTask(id) {
+            const task = plannerTasks.find(t => t.id === id);
+            if (task) {
+                task.completed = !task.completed;
+                saveState();
+                renderPlannerList();
+                if (task.completed) {
+                    showConfetti();
+                }
+            }
+        }
+
+        function deletePlannerTask(id) {
+            plannerTasks = plannerTasks.filter(t => t.id !== id);
+            saveState();
+            renderPlannerList();
+        }
+
+        // ============================================
+        // NOTES
+        // ============================================
+        function saveNote() {
+            const title = document.getElementById('noteTitle').value;
+            const content = document.getElementById('noteContent').value;
+
+            if (!title || !content) {
+                alert('Please fill in title and content!');
+                return;
+            }
+
+            const note = {
+                id: Date.now(),
+                title,
+                content,
+                pinned: false,
+                createdAt: new Date()
+            };
+
+            state.notes.push(note);
+            saveState();
+            renderNotesList();
+            document.getElementById('noteTitle').value = '';
+            document.getElementById('noteContent').value = '';
+        }
+
+        function renderNotesList() {
+            const list = document.getElementById('notesList');
+            const sortedNotes = [...state.notes].sort((a, b) => {
+                if (a.pinned && !b.pinned) return -1;
+                if (!a.pinned && b.pinned) return 1;
+                return new Date(b.createdAt) - new Date(a.createdAt);
+            });
+
+            if (sortedNotes.length === 0) {
+                list.innerHTML = '<div class="empty-state"><div class="empty-state-icon">📝</div><div class="empty-state-title">No Notes Yet</div><div class="empty-state-text">Create your first note!</div></div>';
+                return;
+            }
+
+            list.innerHTML = sortedNotes.map(note => `
+                <div class="card" style="margin-bottom: 1rem;">
+                    <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 0.5rem;">
+                        <div style="flex: 1;">
+                            <div style="font-weight: 700; font-size: 1.1rem; margin-bottom: 0.25rem;">${note.title} ${note.pinned ? '📌' : ''}</div>
+                            <div style="font-size: 0.85rem; color: var(--secondary);">${new Date(note.createdAt).toLocaleDateString()}</div>
+                        </div>
+                        <div style="display: flex; gap: 0.5rem;">
+                            <button class="btn-icon btn-small" style="background: var(--accent); color: var(--primary); width: 35px; height: 35px;" onclick="toggleNotePin(${note.id})">${note.pinned ? '✓' : '📌'}</button>
+                            <button class="btn-icon btn-small" style="background: rgba(239, 71, 111, 0.2); color: var(--danger); width: 35px; height: 35px;" onclick="deleteNote(${note.id})">🗑️</button>
+                        </div>
+                    </div>
+                    <div style="color: var(--text); line-height: 1.6; white-space: pre-wrap; word-break: break-word;">${note.content.substring(0, 200)}${note.content.length > 200 ? '...' : ''}</div>
+                </div>
+            `).join('');
+        }
+
+        function filterNotes() {
+            const search = document.getElementById('noteSearch').value.toLowerCase();
+            const filtered = state.notes.filter(n => n.title.toLowerCase().includes(search) || n.content.toLowerCase().includes(search));
+
+            const list = document.getElementById('notesList');
+            if (filtered.length === 0) {
+                list.innerHTML = '<div class="empty-state"><div class="empty-state-text">No notes found</div></div>';
+                return;
+            }
+
+            list.innerHTML = filtered.map(note => `
+                <div class="card" style="margin-bottom: 1rem;">
+                    <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 0.5rem;">
+                        <div style="flex: 1;">
+                            <div style="font-weight: 700; font-size: 1.1rem; margin-bottom: 0.25rem;">${note.title}</div>
+                            <div style="font-size: 0.85rem; color: var(--secondary);">${new Date(note.createdAt).toLocaleDateString()}</div>
+                        </div>
+                        <button class="btn-icon btn-small" style="background: rgba(239, 71, 111, 0.2); color: var(--danger); width: 35px; height: 35px;" onclick="deleteNote(${note.id})">🗑️</button>
+                    </div>
+                    <div style="color: var(--text); line-height: 1.6;">${note.content.substring(0, 200)}${note.content.length > 200 ? '...' : ''}</div>
+                </div>
+            `).join('');
+        }
+
+        function toggleNotePin(id) {
+            const note = state.notes.find(n => n.id === id);
+            if (note) {
+                note.pinned = !note.pinned;
+                saveState();
+                renderNotesList();
+            }
+        }
+
+        function deleteNote(id) {
+            if (confirm('Delete this note?')) {
+                state.notes = state.notes.filter(n => n.id !== id);
+                saveState();
+                renderNotesList();
+            }
+        }
+
+        // ============================================
+        // WATER TRACKER
+        // ============================================
+        function addWater() {
+            const today = new Date().toDateString();
+            const todayWater = state.water.filter(w => new Date(w.date).toDateString() === today);
+            const glassCount = todayWater.length;
+
+            if (glassCount < 8) {
+                state.water.push({ date: new Date() });
+                saveState();
+                updateWaterTracker();
+                animateWaterFill();
+                showFloatingHeart();
+            }
+        }
+
+        function resetWater() {
+            const today = new Date().toDateString();
+            state.water = state.water.filter(w => new Date(w.date).toDateString() !== today);
+            saveState();
+            updateWaterTracker();
+        }
+
+        function updateWaterTracker() {
+            const today = new Date().toDateString();
+            const todayWater = state.water.filter(w => new Date(w.date).toDateString() === today);
+            const glassCount = Math.min(todayWater.length, 8);
+
+            document.getElementById('waterGlassCount').textContent = glassCount;
+            document.getElementById('statsWaterToday').textContent = glassCount;
+
+            const waterLevel = document.getElementById('waterLevel');
+            const targetHeight = (glassCount / 8) * 140;
+            waterLevel.style.transition = 'height 0.35s ease';
+            waterLevel.style.height = `${targetHeight}px`;
+
+            const reminder = document.querySelector('#water .card:last-child .card-title');
+            const todayLabel = document.querySelector('#water .hydration-date');
+            if (reminder) {
+                if (glassCount === 0) {
+                    reminder.textContent = '💡 Hydration Reminder';
+                } else if (glassCount < 4) {
+                    reminder.textContent = '💡 Keep going';
+                } else if (glassCount < 8) {
+                    reminder.textContent = '💡 Almost there';
+                } else {
+                    reminder.textContent = '💡 Goal complete';
+                }
+            }
+            if (todayLabel) {
+                todayLabel.textContent = `Today • ${new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}`;
+            }
+        }
+
+        function animateWaterFill() {
+            const waterLevel = document.getElementById('waterLevel');
+            waterLevel.animate([
+                { transform: 'scaleY(0.7)', opacity: 0.7 },
+                { transform: 'scaleY(1)', opacity: 1 }
+            ], { duration: 450, easing: 'ease-out' });
+        }
+
+        // ============================================
+        // ACHIEVEMENTS
+        // ============================================
+        function renderAchievements() {
+            const list = document.getElementById('achievementsList');
+            if (!list) return;
+
+            const achievements = [];
+
+            // Check achievements
+            if (state.workouts.length >= 7) achievements.push({ icon: '🔥', name: '7 Day Warrior', desc: 'Complete 7 workouts' });
+            if (state.workouts.length >= 30) achievements.push({ icon: '💪', name: 'Fitness Champion', desc: 'Complete 30 workouts' });
+            if (state.workouts.length >= 100) achievements.push({ icon: '👑', name: 'Consistency Queen', desc: 'Complete 100 workouts' });
+
+            const totalStudyMinutes = state.studies.reduce((sum, s) => sum + (s.hours * 60 + s.minutes), 0);
+            if (totalStudyMinutes >= 60) achievements.push({ icon: '📚', name: 'Study Star', desc: 'Study for 100 hours' });
+            if (totalStudyMinutes >= 600) achievements.push({ icon: '⭐', name: 'Knowledge Seeker', desc: 'Study for 600 hours' });
+
+            if (state.notes.length >= 100) achievements.push({ icon: '📝', name: 'Writer', desc: 'Write 100 notes' });
+
+            if (achievements.length === 0) {
+                list.innerHTML = '<div class="empty-state"><div class="empty-state-text">Keep working! More achievements coming soon! 🌟</div></div>';
+                return;
+            }
+
+            list.innerHTML = achievements.map(a => `
+                <div class="card" style="margin-bottom: 1rem; text-align: center;">
+                    <div style="font-size: 3rem; margin-bottom: 0.5rem;">${a.icon}</div>
+                    <div style="font-weight: 700; font-size: 1.1rem; margin-bottom: 0.25rem;">${a.name}</div>
+                    <div style="font-size: 0.85rem; color: var(--secondary);">${a.desc}</div>
+                </div>
+            `).join('');
+        }
+
+        // ============================================
+        // STATISTICS
+        // ============================================
+        function updateStatistics() {
+            document.getElementById('statsTotalWorkouts').textContent = state.workouts.length;
+
+            const totalStudyMinutes = state.studies.reduce((sum, s) => sum + (s.hours * 60 + s.minutes), 0);
+            const hours = Math.floor(totalStudyMinutes / 60);
+            document.getElementById('statsTotalStudy').textContent = `${hours}h`;
+
+            document.getElementById('statsTotalNotes').textContent = state.notes.length;
+
+            const today = new Date().toDateString();
+            const todayWater = state.water.filter(w => new Date(w.date).toDateString() === today);
+            document.getElementById('statsWaterToday').textContent = todayWater.length;
+
+            drawWorkoutChart();
+            drawStudyChart();
+        }
+
+        function drawChart(canvas, data, color) {
+            if (!canvas || !canvas.getContext) return;
+            const ctx = canvas.getContext('2d');
+            const width = canvas.offsetWidth || 320;
+            const height = canvas.offsetHeight || 220;
+            canvas.width = width;
+            canvas.height = height;
+
+            const padding = 24;
+            const chartWidth = width - padding * 2;
+            const chartHeight = height - padding * 2;
+            const maxValue = Math.max(...data, 1);
+            const stepX = chartWidth / Math.max(data.length - 1, 1);
+
+            ctx.clearRect(0, 0, width, height);
+            ctx.strokeStyle = 'rgba(255,255,255,0.25)';
+            ctx.lineWidth = 1;
+            for (let i = 0; i < 4; i++) {
+                const y = padding + (chartHeight / 3) * i;
+                ctx.beginPath();
+                ctx.moveTo(padding, y);
+                ctx.lineTo(width - padding, y);
+                ctx.stroke();
+            }
+
+            ctx.beginPath();
+            data.forEach((value, index) => {
+                const x = padding + index * stepX;
+                const y = padding + chartHeight - (value / maxValue) * chartHeight;
+                if (index === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+            });
+            ctx.strokeStyle = color;
+            ctx.lineWidth = 3;
+            ctx.stroke();
+
+            data.forEach((value, index) => {
+                const x = padding + index * stepX;
+                const y = padding + chartHeight - (value / maxValue) * chartHeight;
+                ctx.beginPath();
+                ctx.arc(x, y, 4, 0, Math.PI * 2);
+                ctx.fillStyle = color;
+                ctx.fill();
+            });
+        }
+
+        function drawWorkoutChart() {
+            const canvas = document.getElementById('workoutChart');
+            const days = 14;
+            const data = [];
+            const today = new Date();
+            for (let i = days - 1; i >= 0; i--) {
+                const date = new Date(today);
+                date.setDate(date.getDate() - i);
+                const dateStr = date.toDateString();
+                const count = state.workouts.filter(w => new Date(w.date).toDateString() === dateStr).length;
+                data.push(count);
+            }
+            drawChart(canvas, data, getComputedStyle(document.documentElement).getPropertyValue('--primary').trim() || '#ff6b9d');
+        }
+
+        function drawStudyChart() {
+            const canvas = document.getElementById('studyChart');
+            const days = 14;
+            const data = [];
+            const today = new Date();
+            for (let i = days - 1; i >= 0; i--) {
+                const date = new Date(today);
+                date.setDate(date.getDate() - i);
+                const dateStr = date.toDateString();
+                const minutes = state.studies.filter(s => new Date(s.date).toDateString() === dateStr).reduce((sum, s) => sum + (s.hours * 60 + s.minutes), 0);
+                data.push(Math.round(minutes / 60));
+            }
+            drawChart(canvas, data, getComputedStyle(document.documentElement).getPropertyValue('--secondary').trim() || '#c77dff');
+        }
+
+        // ============================================
+        // CONFETTI & ANIMATIONS
+        // ============================================
+        function showConfetti() {
+            for (let i = 0; i < 30; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.textContent = ['🎉', '✨', '❤️', '🌸', '⭐'][Math.floor(Math.random() * 5)];
+                confetti.style.left = Math.random() * 100 + '%';
+                confetti.style.top = '-20px';
+                confetti.style.fontSize = Math.random() * 1 + 1 + 'rem';
+                confetti.style.opacity = 1;
+                document.body.appendChild(confetti);
+
+                setTimeout(() => confetti.remove(), 3000);
+            }
+        }
+
+        function showFloatingHeart() {
+            const heart = document.createElement('div');
+            heart.className = 'floating-heart';
+            heart.textContent = '❤️';
+            heart.style.left = Math.random() * 100 + '%';
+            heart.style.top = '50%';
+            document.body.appendChild(heart);
+
+            setTimeout(() => heart.remove(), 3000);
+        }
+
+        // ============================================
+        // DATA EXPORT/IMPORT
+        // ============================================
+        function exportData() {
+            const data = {
+                state,
+                plannerTasks
+            };
+
+            const json = JSON.stringify(data, null, 2);
+            const blob = new Blob([json], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `farah-wellness-backup-${new Date().toISOString().split('T')[0]}.json`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+
+            alert('Data exported successfully!');
+        }
+
+        function importData(e) {
+            const file = e.target.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = function(event) {
+                try {
+                    const data = JSON.parse(event.target.result);
+                    Object.assign(state, data.state);
+                    plannerTasks = data.plannerTasks || [];
+                    saveState();
+                    alert('Data imported successfully! Please refresh the page.');
+                    location.reload();
+                } catch (err) {
+                    alert('Error importing data. Please ensure the file is valid.');
+                }
+            };
+            reader.readAsText(file);
+        }
+
+        function clearAllData() {
+            const first = confirm('🗑️ Clear everything? This will remove your workouts, study sessions, notes, planner tasks, water logs, and current progress.');
+            if (!first) return;
+
+            const second = prompt('Type DELETE EVERYTHING to confirm.');
+            if (second?.trim() !== 'DELETE EVERYTHING') {
+                alert('Clear canceled. Your data is safe. 💖');
+                return;
+            }
+
+            localStorage.removeItem('farah-state');
+            localStorage.removeItem('farah-planner-tasks');
+            state.workouts = [];
+            state.studies = [];
+            state.notes = [];
+            state.water = [];
+            state.currentSection = 'dashboard';
+            state.currentMood = null;
+            state.currentDate = new Date();
+            state.fontSize = 'normal';
+            state.animationIntensity = 'normal';
+            plannerTasks = [];
+            saveState();
+            location.reload();
+        }
+
+        // ============================================
+        // UTILITIES
+        // ============================================
+        function setupCustomScrollbar() {
+            // Custom scrollbar styling is in CSS
+        }
+
+        // ============================================
+        // RENDER ALL LISTS ON INIT
+        // ============================================
+        function renderAllLists() {
+            renderCalendar();
+            renderWorkoutList();
+            renderStudyList();
+            updateStudyStats();
+            renderPlannerList();
+            renderNotesList();
+            renderAchievements();
+            updateStatistics();
+            updateWaterTracker();
+        }
+
+        // ============================================
+        // INITIALIZE APP
+        // ============================================
+        document.addEventListener('DOMContentLoaded', () => {
+            initApp();
+            renderAllLists();
+
+            // Update every minute
+            setInterval(() => {
+                updateDashboard();
+                updateStatistics();
+            }, 60000);
+
+            // Update water tracker
+            setInterval(() => {
+                updateWaterTracker();
+            }, 30000);
+        });
+    </script>
+</body>
+</html>
