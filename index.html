@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>Farah's Wellness Journey ❤️</title>
     <style>
         * {
@@ -99,6 +99,8 @@
             -webkit-text-size-adjust: 100%;
             text-size-adjust: 100%;
             color-scheme: light;
+            touch-action: manipulation;
+            -webkit-tap-highlight-color: transparent;
         }
 
         body[data-theme="dark"],
@@ -757,6 +759,7 @@
             backdrop-filter: blur(20px);
             max-width: 860px;
             margin: 0 auto;
+            overflow: hidden;
         }
 
         .calendar-header {
@@ -784,8 +787,9 @@
 
         .calendar-grid {
             display: grid;
-            grid-template-columns: repeat(7, 1fr);
+            grid-template-columns: repeat(7, minmax(0, 1fr));
             gap: 0.5rem;
+            width: 100%;
         }
 
         .calendar-day-header {
@@ -799,6 +803,8 @@
 
         .calendar-day {
             aspect-ratio: 1;
+            min-height: 44px;
+            min-width: 0;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -1463,7 +1469,6 @@
                 <div class="nav-brand">❤️ Farah</div>
                 <button class="nav-toggle" id="navToggle" type="button" aria-label="Toggle navigation" aria-expanded="false"><span class="nav-toggle-icon"></span></button>
                 <div class="nav-menu" id="navMenu" aria-hidden="true">
-                    <button class="nav-close" id="navClose" type="button" aria-label="Close navigation">✕</button>
                     <button class="nav-item active" data-section="dashboard">Dashboard</button>
                     <button class="nav-item" data-section="workout">Workout</button>
                     <button class="nav-item" data-section="study">Study</button>
@@ -1771,8 +1776,8 @@
 
                 <div class="card">
                     <div class="card-title">💡 Hydration Reminder</div>
-                    <div style="text-align: center; padding: 1rem; background: rgba(255, 107, 157, 0.1); border-radius: 12px; color: var(--primary); font-weight: 600; font-size: 0.95rem;">
-                        "Farah, drink water! Your body and mind will thank you. 💙"
+                    <div id="hydrationMessage" style="text-align: center; padding: 1rem; background: rgba(255, 107, 157, 0.1); border-radius: 12px; color: var(--primary); font-weight: 600; font-size: 0.95rem; line-height: 1.6;">
+                        Farah, your body is asking for water. Start with one glass now 💧
                     </div>
                 </div>
             </section>
@@ -1971,7 +1976,6 @@
             // Mobile menu toggle
             const navToggle = document.getElementById('navToggle');
             const navMenu = document.getElementById('navMenu');
-            const navClose = document.getElementById('navClose');
 
             navToggle.addEventListener('click', () => {
                 const isOpen = navMenu.classList.contains('mobile-visible');
@@ -1986,10 +1990,6 @@
                     document.body.classList.add('menu-open');
                 }
             });
-
-            if (navClose) {
-                navClose.addEventListener('click', closeMobileMenu);
-            }
 
             window.addEventListener('resize', () => {
                 if (window.innerWidth > 768) {
@@ -2743,7 +2743,7 @@
             waterLevel.style.transformOrigin = 'center bottom';
 
             const reminder = document.querySelector('#water .card:last-child .card-title');
-            const todayLabel = document.querySelector('#water .hydration-date');
+            const hydrationMessage = document.getElementById('hydrationMessage');
             if (reminder) {
                 if (glassCount === 0) {
                     reminder.textContent = '💡 Hydration Reminder';
@@ -2755,8 +2755,18 @@
                     reminder.textContent = '💡 Goal complete';
                 }
             }
-            if (todayLabel) {
-                todayLabel.textContent = `Today • ${new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}`;
+            if (hydrationMessage) {
+                if (glassCount === 0) {
+                    hydrationMessage.textContent = 'Farah, your body is asking for water. Start with one glass now 💧';
+                } else if (glassCount < 3) {
+                    hydrationMessage.textContent = 'Farah, you are still low. Sip a little more — 2 glasses is only the start. 💧';
+                } else if (glassCount < 6) {
+                    hydrationMessage.textContent = 'Farah, you are building momentum. Keep going — your glow and energy will thank you. ✨';
+                } else if (glassCount < 8) {
+                    hydrationMessage.textContent = 'Farah, you are almost there. A few more sips and your day will feel so much lighter. 🌿';
+                } else {
+                    hydrationMessage.textContent = 'Farah, you reached your goal. Beautiful work — keep glowing, and let that calm, fresh energy stay with you. 💙';
+                }
             }
         }
 
