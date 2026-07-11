@@ -1486,7 +1486,7 @@
         <main>
             <!-- DASHBOARD -->
             <section id="dashboard" class="active">
-                <div class="greeting" id="greeting">Good Morning, Farah! ❤️</div>
+            <div class="greeting" id="greeting">Good Morning, Farah! ❤️</div>
                 <div class="quote" id="quote">Loading your inspiration...</div>
 
                 <div class="dashboard-grid">
@@ -1840,9 +1840,9 @@
                 <div class="card">
                     <div class="card-title">❤️ About</div>
                     <p style="text-align: center; color: var(--secondary); font-size: 0.95rem;">
-                        Built with love for Farah ❤️<br>
+                        Built with love for Farah From Amanul Hasan ❤️<br>
                         <br>
-                        This app is your personal wellness companion. Track your progress, celebrate your achievements, and remember: every small step counts.<br>
+                        Mere Tamatar, This app is your personal wellness companion. Track your progress, celebrate your achievements, and remember: every small step counts.<br>
                         <br>
                         <strong>"Farah, your future self will thank you for the progress you make today."</strong>
                     </p>
@@ -2110,14 +2110,14 @@
 
         function updateQuote() {
             const quotes = [
-                "Farah, your consistency is beautiful.",
-                "Farah, one small step today is still progress.",
-                "Farah, your future self will thank you.",
-                "Don't give up, Farah! 🌸",
-                "Farah, you are stronger than you think.",
-                "Every workout is a victory, Farah.",
-                "Farah, progress over perfection.",
-                "You got this, Farah! ❤️"
+                "Meri Pyari Farru!!",
+                "Tamatar hop tm meri, Samjhee!!",
+                "Oye Mera Golgappa Farah",
+                "Ye dil dhadka do, Zulfein bikhra do, Sharma ke apna, Aanchal lehra do 🌸",
+                "Main Ajaun Ky apni par.",
+                "O madam teri chaal, Tere silky silky baal",
+                "Paas aye to chhooke main dekhun zara",
+                "Tmhara to game baja dunga ek din, haath lago bs!!"
             ];
             const quote = quotes[Math.floor(Math.random() * quotes.length)];
             document.getElementById('quote').textContent = `💭 ${quote}`;
@@ -2268,7 +2268,7 @@
             const sortedWorkouts = [...state.workouts].sort((a, b) => new Date(b.date) - new Date(a.date));
 
             if (sortedWorkouts.length === 0) {
-                list.innerHTML = '<div class="empty-state"><div class="empty-state-icon">💪</div><div class="empty-state-title">No Workouts Yet</div><div class="empty-state-text">Start your first workout today!</div></div>';
+                list.innerHTML = '<div class="empty-state"><div class="empty-state-icon">💪</div><div class="empty-state-title">No Workouts Yet</div><div class="empty-state-text">Karlo Exercise, chupchaap!!</div></div>';
                 return;
             }
 
@@ -2354,7 +2354,7 @@
             const sortedStudies = [...state.studies].sort((a, b) => new Date(b.date) - new Date(a.date));
 
             if (sortedStudies.length === 0) {
-                list.innerHTML = '<div class="empty-state"><div class="empty-state-icon">📚</div><div class="empty-state-title">No Study Sessions Yet</div><div class="empty-state-text">Start learning today!</div></div>';
+                list.innerHTML = '<div class="empty-state"><div class="empty-state-icon">📚</div><div class="empty-state-title">No Study Sessions Yet</div><div class="empty-state-text">Farah Bete, Kiu nhi ho rghi padhaai?? Bete UPSC karna hai, nhi nikla to ulta taang ke marunga</div></div>';
                 return;
             }
 
@@ -2565,7 +2565,7 @@
             const list = document.getElementById('plannerList');
 
             if (plannerTasks.length === 0) {
-                list.innerHTML = '<div class="empty-state"><div class="empty-state-icon">✅</div><div class="empty-state-title">No Tasks Yet</div><div class="empty-state-text">Add your first task!</div></div>';
+                list.innerHTML = '<div class="empty-state"><div class="empty-state-icon">✅</div><div class="empty-state-title">No Tasks Yet</div><div class="empty-state-text">To fir kis baat ki deri? Karo na apne Amanu ko pyaar!!</div></div>';
                 return;
             }
 
@@ -2641,7 +2641,7 @@
             });
 
             if (sortedNotes.length === 0) {
-                list.innerHTML = '<div class="empty-state"><div class="empty-state-icon">📝</div><div class="empty-state-title">No Notes Yet</div><div class="empty-state-text">Create your first note!</div></div>';
+                list.innerHTML = '<div class="empty-state"><div class="empty-state-icon">📝</div><div class="empty-state-title">No Notes Yet</div><div class="empty-state-text">Tmne Diary di thi Woh bhi Rohit wali, Ye section to zruri tha banana, Notes bnha lena idhr!!</div></div>';
                 return;
             }
 
@@ -2757,15 +2757,15 @@
             }
             if (hydrationMessage) {
                 if (glassCount === 0) {
-                    hydrationMessage.textContent = 'Farah, your body is asking for water. Start with one glass now 💧';
+                    hydrationMessage.textContent = 'Farah, your body is asking for water. Start with one glass now, aur paani piyoge to isi trah hmesha chehra Noorani bana rahega pyare!! Isliye Paani peeloo, Faurannnnn!!! 💧';
                 } else if (glassCount < 3) {
                     hydrationMessage.textContent = 'Farah, you are still low. Sip a little more — 2 glasses is only the start. 💧';
                 } else if (glassCount < 6) {
-                    hydrationMessage.textContent = 'Farah, you are building momentum. Keep going — your glow and energy will thank you. ✨';
+                    hydrationMessage.textContent = 'Abhi bhi kam piya hai meri jaan, 8 hai minimum per day Farah. A few more sips and your body will thank you. 🌸';
                 } else if (glassCount < 8) {
-                    hydrationMessage.textContent = 'Farah, you are almost there. A few more sips and your day will feel so much lighter. 🌿';
+                    hydrationMessage.textContent = 'Farah Babbuu, you are almost there 🌿';
                 } else {
-                    hydrationMessage.textContent = 'Farah, you reached your goal. Beautiful work — keep glowing, and let that calm, fresh energy stay with you. 💙';
+                    hydrationMessage.textContent = 'Farah, you reached your goal. Beautiful work — keep glowing, and let that calm, fresh energy and the Noor Always stay with you. 💙';
                 }
             }
         }
